@@ -2,10 +2,9 @@
 
 import {
   Handshake,
-  Users,
   Heart,
   Target,
-  Globe,
+  SlidersHorizontal,
   TrendingUp,
   ChevronLeft,
   ChevronRight,
@@ -90,16 +89,20 @@ export default function AboutOurGymSection() {
           <h2 className="text-4xl sm:text-5xl font-heading uppercase mb-6">
             About Focus Fitness
           </h2>
-          <p className="text-lg text-text-secondary mb-8 font-body">
-            Focus Fitness is a comprehensive digital fitness platform tailored
-            to the needs of Sri Lankans. Designed for individuals and gym
-            operators, it combines personalized workout and diet plans,
-            real-time AI support, and advanced gym management tools. With an
-            intuitive interface and localized features, Focus Fitness aims to
-            bridge gaps in personal fitness tracking and gym operations,
-            promoting healthier lifestyles across Sri Lanka.
+          <p className="text-lg text-text-secondary mb-8 font-body text-justify">
+            Focus Fitness is an all in one digital fitness platform built for
+            Sri Lankans. Whether you're reaching personal health goals or
+            managing a gym, it offers personalized workout plans, AI coaching,
+            and smart gym management tools all in one place. With a user
+            friendly design and localized features, it bridges the gap between
+            personal fitness and professional operations. Fully customizable to
+            match your gym's brand and needs.
           </p>
           <div className="space-y-4">
+            <div className="flex items-center text-text-primary font-body">
+              <SlidersHorizontal className="h-6 w-6 text-[#F45C65] mr-3" />
+              <span>The Platform is Fully Customizable to Suit Your Gym</span>
+            </div>
             <div className="flex items-center text-text-primary font-body">
               <Heart className="h-6 w-6 text-[#F45C65] mr-3" />
               <span>Promoting Healthier Lifestyles Across the Nation</span>
@@ -107,10 +110,6 @@ export default function AboutOurGymSection() {
             <div className="flex items-center text-text-primary font-body">
               <Handshake className="h-6 w-6 text-[#F45C65] mr-3" />
               <span>Connecting Individuals with Fitness Professionals</span>
-            </div>
-            <div className="flex items-center text-text-primary font-body">
-              <Target className="h-6 w-6 text-[#F45C65] mr-3" />
-              <span>Empowering Everyone to Achieve Their Fitness Goals</span>
             </div>
             <div className="flex items-center text-text-primary font-body">
               <TrendingUp className="h-6 w-6 text-[#F45C65] mr-3" />

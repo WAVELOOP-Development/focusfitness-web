@@ -34,7 +34,7 @@ export default function HeroSection() {
         </h1>
         <p className="text-lg sm:text-xl text-text-secondary mb-5 font-body">
           Sri Lanka's Smartest Fitness App – Personalized Plans, AI Coaching,
-          and Powerful Gym Management Tools.
+          Fully Customizable, and Seamless Gym Management.
         </p>
 
         {/* Scroll Down Icon */}

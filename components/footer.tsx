@@ -107,12 +107,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="#contact"
-                  className="text-text-secondary hover:text-text-primary transition-colors duration-300"
+                <Link
+                  href="/contact-us"
+                  className="nav-link text-text-secondary hover:text-text-primary transition-colors duration-300"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

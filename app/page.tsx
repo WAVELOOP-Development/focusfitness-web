@@ -7,15 +7,12 @@ import WhyChooseUsSection from "@/components/why-choose-us-section";
 import AboutOurGymSection from "@/components/about-our-gym-section";
 import CoreFeaturesSection from "@/components/core-features-section";
 import SubscriptionPlansSection from "@/components/subscription-plans-section";
-import TechnologySecuritySection from "@/components/quote-section"; // Renamed
-import FinalCTASection from "@/components/final-cta-section";
 import Footer from "@/components/footer";
 import VisualDemoSection from "@/components/visual-demo-section";
 import QuoteSection from "@/components/quote-section";
 
 export default function Index() {
   useEffect(() => {
-    // Intersection Observer for animate-on-scroll
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -37,7 +34,6 @@ export default function Index() {
   }, []);
 
   useEffect(() => {
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", (e) => {
         e.preventDefault();
@@ -47,10 +43,7 @@ export default function Index() {
 
         const targetElement = document.getElementById(targetId);
         if (!targetElement) return;
-
-        // Adjust offset for fixed navbar height
-        const offset = window.innerWidth < 768 ? 80 : 80; // Assuming navbar height is around 80px
-
+        const offset = window.innerWidth < 768 ? 80 : 80;
         window.scrollTo({
           top: targetElement.offsetTop - offset,
           behavior: "smooth",
@@ -70,7 +63,6 @@ export default function Index() {
         <QuoteSection />
         <VisualDemoSection />
         <SubscriptionPlansSection />
-        <FinalCTASection />
       </main>
       <Footer />
     </div>

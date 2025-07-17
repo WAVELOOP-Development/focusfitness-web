@@ -4,9 +4,8 @@ import {
   MapPin,
   Shield,
   Zap,
-  Clock,
+  SlidersHorizontal,
   Smartphone,
-  Handshake,
   Lock,
 } from "lucide-react";
 
@@ -16,37 +15,37 @@ export default function WhyChooseUsSection() {
       icon: MapPin,
       title: "Local Expertise, Global Standards",
       description:
-        "Built specifically for Sri Lankans, understanding local dietary preferences, cultural fitness practices, and economic realities. Unlike generic international platforms, we provide culturally relevant meal plans featuring rice and curry, hoppers, and traditional Sri Lankan ingredients while maintaining world-class technical standards.",
+        "Made for Sri Lankans with meal plans and fitness tips that match your lifestyle, backed by strong global tech.",
+    },
+    {
+      icon: SlidersHorizontal,
+      title: "Fully Customizable",
+      description:
+        "The platform is fully customizable to suit your gym's unique needs and branding.",
     },
     {
       icon: Shield,
-      title: "Proven Track Record with Waveloop",
+      title: "Backed by Waveloop",
       description:
-        "Backed by Waveloop PVT LTD's established technology expertise, Focus Fitness combines innovative development with reliable business practices. Our systematic approach to integration, testing, and deployment ensures a smooth launch and sustained performance.",
+        "Created by a trusted tech company to make sure everything runs smoothly and reliably.",
     },
     {
       icon: Zap,
-      title: "End-to-End Ecosystem",
+      title: "All-in-One Platform",
       description:
-        "While other platforms force you to juggle multiple apps, Focus Fitness provides a complete ecosystem where individual users, gym operators, and corporate wellness programs seamlessly connect. This unified approach eliminates data silos and creates a more engaging fitness community.",
-    },
-    {
-      icon: Clock,
-      title: "Rapid Implementation",
-      description:
-        "Our streamlined 2-month integration and testing process means you can start benefiting from Focus Fitness quickly. With comprehensive training and 3 months of free post-launch support, we ensure your transition is smooth and successful.",
+        "Everything you need in one app, no switching between different tools or systems.",
     },
     {
       icon: Smartphone,
-      title: "Future-Ready Technology",
+      title: "Works Anywhere",
       description:
-        "Built with offline functionality and scalable architecture, Focus Fitness works reliably even in areas with limited connectivity while being ready to grow with your needs. Our platform evolves with emerging fitness trends and technological advances.",
+        "Even works without internet and can grow as your needs grow.",
     },
     {
       icon: Lock,
-      title: "Data Security You Can Trust",
+      title: "Safe and Secure",
       description:
-        "Full compliance with Sri Lankan data privacy laws, end-to-end encryption, and a commitment to keeping your personal information secure and private. Your data stays yours – we're just here to help you achieve your fitness goals.",
+        "Your data stays private, protected, and follows all Sri Lankan privacy rules.",
     },
   ];
 
@@ -81,7 +80,7 @@ export default function WhyChooseUsSection() {
               <h3 className="text-2xl font-heading uppercase text-center mb-4">
                 {card.title}
               </h3>
-              <p className="text-text-secondary text-center mb-6 font-body text-sm">
+              <p className="text-text-secondary text-center mb-6 font-body text-base">
                 {card.description}
               </p>
             </div>

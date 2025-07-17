@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Dumbbell, Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isNavVisible, setIsNavVisible] = useState(true);
@@ -46,12 +46,12 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <a
-              href="#home"
-              className="text-[#F45C65] font-bold text-sm uppercase tracking-wide hover:text-[#F45C65] transition-colors"
+            <Link
+              href="/"
+              className="nav-link text-white font-bold text-sm uppercase tracking-wide hover:text-[#F45C65] transition-colors "
             >
               HOME
-            </a>
+            </Link>
 
             <a
               href="#about-us"
@@ -74,19 +74,13 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Get Started Button */}
           <div className="hidden lg:block">
-            <Button
-              className="bg-[#F45C65] hover:bg-[#F45C65]/80 hover:text-white text-rich-black font-bold px-6 py-3 text-sm uppercase tracking-wide transition-all duration-300 group-hover-scale"
-              onClick={() => {
-                const section = document.getElementById("contact");
-                if (section) {
-                  section.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
+            <Link
+              href="/contact-us"
+              className="nav-link text-text-primary font-medium text-sm uppercase tracking-wide hover:text-[#F45C65] transition-colors"
             >
-              CONTACT US →
-            </Button>
+              CONTACT
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -106,13 +100,12 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-rich-black border-t border-gray-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a
-                href="#home"
-                className="block px-3 py-2 text-[#F45C65] font-bold text-sm uppercase"
+              <Link
+                href="/"
+                className="nav-link block px-3 py-2 text-white font-bold text-sm uppercase"
               >
                 HOME
-              </a>
-
+              </Link>
               <a
                 href="#about-us"
                 className="block px-3 py-2 text-text-primary font-medium text-sm uppercase hover:text-[#F45C65]"
@@ -134,17 +127,9 @@ export default function Navbar() {
               </a>
 
               <div className="px-3 py-2">
-                <Button
-                  className="w-full bg-[#F45C65] hover:bg-[#F45C65]/80 text-rich-black font-bold py-3 text-sm uppercase group-hover-scale"
-                  onClick={() => {
-                    const section = document.getElementById("contact");
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                >
-                  CONTACT US →
-                </Button>
+                <Link href="/contact-us" className="nav-link">
+                  Contact
+                </Link>
               </div>
             </div>
           </div>
