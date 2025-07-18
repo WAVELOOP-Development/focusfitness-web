@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const demoScreens = [
   {
     title: "Home Dashboard",
     description:
-      "Your personalized fitness hub with quick access to workouts, nutrition, and progress tracking.",
+      "Your personalized fitness hub with quick access to workouts and etc.",
     image: "/Home.jpg",
     color: "from-[#F45C65] to-[#F45C65]/10",
   },
@@ -70,23 +69,19 @@ export default function VisualDemoSection() {
         {/* Mobile mockup carousel */}
         <div className="relative max-w-6xl mx-auto">
           {/* Navigation buttons */}
-          <Button
-            variant="ghost"
-            size="icon"
+          <button
             onClick={prevScreen}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-rich-black/50 backdrop-blur-sm border border-gray-700 hover:border-[#F45C65] transition-colors" /* Updated color */
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 hover:scale-110 transition-transform duration-200"
           >
-            <ChevronLeft className="w-6 h-6 text-text-primary" />
-          </Button>
+            <ChevronLeft className="w-8 h-8 text-text-primary hover:text-[#F45C65] transition-colors" />
+          </button>
 
-          <Button
-            variant="ghost"
-            size="icon"
+          <button
             onClick={nextScreen}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-rich-black/50 backdrop-blur-sm border border-gray-700 hover:border-[#F45C65] transition-colors" /* Updated color */
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 hover:scale-110 transition-transform duration-200"
           >
-            <ChevronRight className="w-6 h-6 text-text-primary" />
-          </Button>
+            <ChevronRight className="w-8 h-8 text-text-primary hover:text-[#F45C65] transition-colors" />
+          </button>
           {/* Phone mockups */}
           <div className="flex justify-center items-center space-x-8 lg:space-x-12 h-[600px]">
             {/* Left phone (previous) */}

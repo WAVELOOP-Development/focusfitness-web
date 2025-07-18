@@ -1,15 +1,13 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function HeroSection() {
-  const scrollToNextSection = () => {
-    const nextSection = document.querySelector(
-      "#about, #features, #services, section:nth-of-type(2)"
-    );
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" });
-    }
+  const router = useRouter();
+
+  const navigateToContact = () => {
+    router.push("/contact-us");
   };
 
   return (
@@ -39,13 +37,13 @@ export default function HeroSection() {
 
         {/* Scroll Down Icon */}
         <button
-          onClick={scrollToNextSection}
-          className="mt-8 p-4 rounded-full border-2 border-[#F45C65]  transition-all duration-300 hover:bg-[#F45C65] text-white cursor-pointer animate-pulse"
+          onClick={navigateToContact}
+          className="text-2xl font-heading uppercase mt-10 p-5 rounded-full border-2 border-[#F45C65] transition-all duration-300 hover:bg-[#F45C65] text-white cursor-pointer animate-pulse"
           style={{
             animation: "slowBounce 2s ease-in-out infinite",
           }}
         >
-          <ChevronDown className="w-8 h-8" />
+          Start Today!
         </button>
       </div>
     </section>

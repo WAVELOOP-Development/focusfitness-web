@@ -48,7 +48,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-8">
             <Link
               href="/"
-              className="nav-link text-white font-bold text-sm uppercase tracking-wide hover:text-[#F45C65] transition-colors "
+              className="nav-link text-white font-medium text-sm uppercase tracking-wide hover:text-[#F45C65] transition-colors "
             >
               HOME
             </Link>
@@ -102,7 +102,7 @@ export default function Navbar() {
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
                 href="/"
-                className="nav-link block px-3 py-2 text-white font-bold text-sm uppercase"
+                className="nav-link block px-3 py-2 text-white font-medium text-sm uppercase"
               >
                 HOME
               </Link>
@@ -127,8 +127,11 @@ export default function Navbar() {
               </a>
 
               <div className="px-3 py-2">
-                <Link href="/contact-us" className="nav-link">
-                  Contact
+                <Link
+                  href="/contact-us"
+                  className="nav-link block text-text-primary font-medium text-sm uppercase hover:text-[#F45C65]"
+                >
+                  CONTACT
                 </Link>
               </div>
             </div>

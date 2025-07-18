@@ -109,84 +109,10 @@ export default function ContactUsPage() {
         {/* Section 2: Contact Information and Form */}
         <section className="py-16 bg-rich-black text-text-primary">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12">
-              {/* Contact Information */}
-              <div>
-                <h2 className="text-2xl font-heading uppercase mb-8">
-                  Contact Information
-                </h2>
-                <div className="space-y-6">
-                  <div className="flex items-center">
-                    <div className="p-3 bg-[#F45C65] rounded-full mr-4">
-                      <Globe className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-text-secondary font-body">Website</p>
-                      <a
-                        href="https://waveloop.dev/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white hover:text-[#F45C65]/80 font-body"
-                      >
-                        www.waveloop.dev
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center">
-                    <div className="p-3 bg-[#F45C65] rounded-full mr-4">
-                      <Mail className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-text-secondary font-body">Email</p>
-                      <a
-                        href="mailto:info@waveloop.dev"
-                        className="text-white hover:text-[#F45C65]/80 font-body"
-                      >
-                        info@waveloop.dev
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center">
-                    <div className="p-3 bg-[#F45C65] rounded-full mr-4">
-                      <Phone className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-text-secondary font-body">Phone</p>
-                      <a
-                        href="tel:+94719967276"
-                        className="text-white hover:text-[#F45C65]/80 font-body"
-                      >
-                        (+94) 71 996 7276
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-12 p-6 bg-[#1A1A1A] rounded-lg border border-[#2A2A2A]">
-                  <Image
-                    src="/logo-secondary-T-white.png"
-                    alt="Waveloop Logo"
-                    width={150}
-                    height={150}
-                    className="mb-4"
-                  />
-                  <p className="text-text-secondary font-body leading-relaxed mb-4">
-                    Focus Fitness is proudly developed by Waveloop PVT LTD,
-                    bringing innovative and customizable technology solutions to
-                    Sri Lanka's fitness industry.
-                  </p>
-                  <p className="text-[#F45C65] font-body text-sm">
-                    Every installation is uniquely tailored to your business
-                    needs
-                  </p>
-                </div>
-              </div>
-
+            <div className="max-w-3xl mx-auto">
               {/* Contact Form */}
               <div>
-                <h2 className="text-2xl font-heading uppercase mb-8">
+                <h2 className="text-4xl sm:text-5xl font-heading uppercase mb-8 text-center">
                   Request Your Custom Solution
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -254,6 +180,81 @@ export default function ContactUsPage() {
                     SUBMIT
                   </Button>
                 </form>
+              </div>
+              {/* Contact Information */}
+              <div>
+                <h2 className="text-4xl sm:text-5xl font-heading uppercase mb-8 text-center mt-20">
+                  Contact Information
+                </h2>
+                <div className="grid md:grid-cols-2">
+                  <div className="space-y-12">
+                    <div className="flex items-center">
+                      <div className="p-3 bg-[#F45C65] rounded-full mr-4">
+                        <Globe className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-text-secondary font-body">Website</p>
+                        <a
+                          href="https://waveloop.dev/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-white hover:text-[#F45C65]/80 font-body"
+                        >
+                          www.waveloop.dev
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center">
+                      <div className="p-3 bg-[#F45C65] rounded-full mr-4">
+                        <Mail className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-text-secondary font-body">Email</p>
+                        <a
+                          href="mailto:info@waveloop.dev"
+                          className="text-white hover:text-[#F45C65]/80 font-body"
+                        >
+                          info@waveloop.dev
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center">
+                      <div className="p-3 bg-[#F45C65] rounded-full mr-4">
+                        <Phone className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-text-secondary font-body">Phone</p>
+                        <a
+                          href="tel:+94719967276"
+                          className="text-white hover:text-[#F45C65]/80 font-body"
+                        >
+                          (+94) 71 996 7276
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-6 bg-[#1A1A1A] rounded-lg border border-[#2A2A2A] mt-8 md:mt-0">
+                    <Image
+                      src="/logo-secondary-T-white.png"
+                      alt="Waveloop Logo"
+                      width={150}
+                      height={150}
+                      className="mb-4"
+                    />
+                    <p className="text-text-secondary font-body leading-relaxed mb-4">
+                      Focus Fitness is proudly developed by Waveloop PVT LTD,
+                      bringing innovative and customizable technology solutions
+                      to Sri Lanka's fitness industry.
+                    </p>
+                    <p className="text-[#F45C65] font-body text-sm">
+                      Every installation is uniquely tailored to your business
+                      needs
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
