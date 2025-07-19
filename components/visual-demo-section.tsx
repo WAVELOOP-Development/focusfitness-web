@@ -26,10 +26,9 @@ const demoScreens = [
     color: "from-[#F45C65] to-[#F45C65]/10",
   },
   {
-    title: "Diet Manager",
-    description:
-      "Personalized meal plans and calorie tracking for optimal nutrition.",
-    image: "/Diet plan.jpg",
+    title: "Exercise Guide",
+    description: "Comprehensive exercise tutorials and video demonstrations.",
+    image: "/Exc.jpg",
     color: "from-[#F45C65] to-[#F45C65]/10",
   },
 ];
