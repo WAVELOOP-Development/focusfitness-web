@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const demoScreens = [
@@ -34,17 +34,46 @@ const demoScreens = [
 ];
 
 export default function VisualDemoSection() {
-  const [currentScreen, setCurrentScreen] = useState(0); // Start with the first screen
+  const [currentScreen, setCurrentScreen] = useState(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
   const nextScreen = () => {
     setCurrentScreen((prev) => (prev + 1) % demoScreens.length);
   };
+
   const prevScreen = () => {
     setCurrentScreen(
       (prev) => (prev - 1 + demoScreens.length) % demoScreens.length
     );
   };
+
   const getScreenIndex = (offset: number) => {
     return (currentScreen + offset + demoScreens.length) % demoScreens.length;
+  };
+
+  // Touch event handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextScreen();
+    }
+    if (isRightSwipe) {
+      prevScreen();
+    }
   };
 
   return (
@@ -67,22 +96,27 @@ export default function VisualDemoSection() {
         </div>
         {/* Mobile mockup carousel */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Navigation buttons */}
+          {/* Navigation buttons - Hidden on mobile */}
           <button
             onClick={prevScreen}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 hover:scale-110 transition-transform duration-200"
+            className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 hover:scale-110 transition-transform duration-200"
           >
             <ChevronLeft className="w-8 h-8 text-text-primary hover:text-[#F45C65] transition-colors" />
           </button>
 
           <button
             onClick={nextScreen}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 hover:scale-110 transition-transform duration-200"
+            className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 hover:scale-110 transition-transform duration-200"
           >
             <ChevronRight className="w-8 h-8 text-text-primary hover:text-[#F45C65] transition-colors" />
           </button>
           {/* Phone mockups */}
-          <div className="flex justify-center items-center space-x-8 lg:space-x-12 h-[600px]">
+          <div
+            className="flex justify-center items-center space-x-8 lg:space-x-12 h-[600px]"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {/* Left phone (previous) */}
             <div className="hidden lg:block relative transform scale-75 opacity-50 transition-all duration-500">
               <div className="relative">

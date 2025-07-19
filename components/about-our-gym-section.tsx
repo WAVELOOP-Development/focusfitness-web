@@ -20,7 +20,7 @@ export default function AboutOurGymSection() {
       alt: "Focus Fitness app interface on a smartphone",
     },
     {
-      src: "/pic2.jpg",
+      src: "/pic2.png",
       alt: "Focus Fitness gym management interface",
     },
   ];

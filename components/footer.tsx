@@ -71,7 +71,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-xl font-heading uppercase mb-6">Quick Links</h3>
             <ul className="space-y-3 font-body">
               <li>
@@ -117,20 +117,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-xl font-heading uppercase mb-6">
               Contact Info
             </h3>
             <div className="space-y-4 font-body" id="contact">
-              <div className="flex items-center">
+              <div className="flex items-center justify-center md:justify-start">
                 <Mail className="h-5 w-5 text-[#F45C65] mr-3" />
                 <span className="text-text-secondary">info@waveloop.dev</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-center md:justify-start">
                 <Phone className="h-5 w-5 text-[#F45C65] mr-3" />
                 <span className="text-text-secondary"> (+94) 71 996 7276</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-center md:justify-start">
                 <MapPin className="h-5 w-5 text-[#F45C65] mr-3" />
                 <span className="text-text-secondary">Colombo, Sri Lanka</span>
               </div>
