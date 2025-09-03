@@ -16,11 +16,11 @@ export default function AboutOurGymSection() {
 
   const images = [
     {
-      src: "/new5.png",
+      src: "/pic2.png",
       alt: "Focus Fitness app interface on a smartphone",
     },
     {
-      src: "/pic2.png",
+      src: "/new5.png",
       alt: "Focus Fitness gym management interface",
     },
   ];

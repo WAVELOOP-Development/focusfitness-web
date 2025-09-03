@@ -94,9 +94,11 @@ export default function VisualDemoSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-on-scroll">
           <h2 className="text-5xl md:text-6xl font-heading uppercase text-text-primary mb-6">
-            Explore the{" "}
-            <span className="text-[#F45C65]">Focus Fitness App</span>{" "}
-            {/* Updated color */}
+            Experience the{" "}
+            <span className="text-[#F45C65]">
+              Ultimate Fitness Management Solution
+            </span>{" "}
+            {/* Updated title */}
           </h2>
           <p className="text-xl text-text-secondary font-body max-w-3xl mx-auto">
             A quick look at what you can do inside Sri Lanka's smartest fitness
@@ -121,7 +123,7 @@ export default function VisualDemoSection() {
           </button>
           {/* Phone mockups */}
           <div
-            className="flex justify-center items-center space-x-8 lg:space-x-12 h-[600px]"
+            className="flex justify-center items-center space-y-8 lg:space-y-0 lg:space-x-12 h-[600px] flex-col lg:flex-row"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}

@@ -232,48 +232,57 @@ export default function PaymentPlansSection() {
           onClose={closeModal}
           className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-rich-black to-black/90"
         >
-          <div className="bg-[#1A1A1A] rounded-lg max-w-4xl w-full p-8 overflow-y-auto max-h-[90vh] shadow-2xl border border-[#F45C65] scrollbar-hide">
-            <Dialog.Title className="text-4xl font-heading mb-6 text-center text-[#F45C65] uppercase">
-              FOCUSFITNESS: PRICING PLANS
-            </Dialog.Title>
-            <p className="text-lg font-body mb-4 text-center text-text-primary">
+          <div className="bg-[#1A1A1A] rounded-lg max-w-4xl w-full p-6 sm:p-8 overflow-y-auto max-h-[90vh] shadow-2xl border border-[#F45C65] scrollbar-hide">
+            <div className="flex justify-between items-center mb-6">
+              <Dialog.Title className="text-2xl sm:text-4xl font-heading text-[#F45C65] uppercase">
+                FOCUSFITNESS: PRICING PLANS
+              </Dialog.Title>
+              <button
+                onClick={closeModal}
+                className="text-white hover:text-[#F45C65] text-xl sm:text-2xl"
+                aria-label="Close"
+              >
+                &times;
+              </button>
+            </div>
+            <p className="text-base sm:text-lg font-body mb-4 text-center text-text-primary">
               An All-in-One System for Your Fitness Center
             </p>
 
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-heading mb-2 text-text-primary underline decoration-[#F45C65]">
+              <h2 className="text-xl sm:text-3xl font-heading mb-2 text-text-primary underline decoration-[#F45C65]">
                 {selectedPlan.name}
               </h2>
-              <p className="text-lg font-body text-text-secondary ">
+              <p className="text-sm sm:text-lg font-body text-text-secondary">
                 ({selectedPlan.subtitle})
               </p>
             </div>
 
             <div className="mb-6">
-              <h3 className="text-2xl font-heading mb-2 text-text-primary">
+              <h3 className="text-lg sm:text-2xl font-heading mb-2 text-text-primary">
                 Features:
               </h3>
               <ul className="list-disc pl-6 mb-4 text-text-secondary space-y-2">
                 {selectedPlan.features.map((feature, index) => (
-                  <li key={index} className="font-body">
+                  <li key={index} className="font-body text-sm sm:text-base">
                     {feature}
                   </li>
                 ))}
               </ul>
-              <h3 className="text-2xl font-heading mb-2 text-text-primary">
+              <h3 className="text-lg sm:text-2xl font-heading mb-2 text-text-primary">
                 Benefits:
               </h3>
               <ul className="list-disc pl-6 mb-4 text-text-secondary space-y-2">
                 {selectedPlan.benefits.split(". ").map((benefit, index) => (
-                  <li key={index} className="font-body">
+                  <li key={index} className="font-body text-sm sm:text-base">
                     {benefit.trim()}
                   </li>
                 ))}
               </ul>
-              <h3 className="text-2xl font-heading mb-2 text-text-primary">
+              <h3 className="text-lg sm:text-2xl font-heading mb-2 text-text-primary">
                 Pricing:
               </h3>
-              <p className="text-text-secondary font-body mb-4">
+              <p className="text-text-secondary font-body mb-4 text-sm sm:text-base">
                 <span className="text-[#F45C65] font-bold">
                   {selectedPlan.price.monthly}
                 </span>{" "}
@@ -286,18 +295,18 @@ export default function PaymentPlansSection() {
             </div>
 
             <div className="border-t border-gray-600 pt-6">
-              <h3 className="text-2xl font-heading mb-2 text-text-primary">
+              <h3 className="text-lg sm:text-2xl font-heading mb-2 text-text-primary">
                 Contact Information:
               </h3>
-              <p className="text-text-secondary font-body mb-2">
+              <p className="text-text-secondary font-body mb-2 text-sm sm:text-base">
                 <strong className="text-[#F45C65]">Email:</strong>{" "}
                 info@waveloop.dev
               </p>
-              <p className="text-text-secondary font-body mb-2">
+              <p className="text-text-secondary font-body mb-2 text-sm sm:text-base">
                 <strong className="text-[#F45C65]">Phone:</strong> +94 71 996
                 7276
               </p>
-              <p className="text-text-secondary font-body mb-4">
+              <p className="text-text-secondary font-body mb-4 text-sm sm:text-base">
                 <strong className="text-[#F45C65]">Website:</strong>{" "}
                 <a
                   href="https://focusfitness.waveloop.dev"
@@ -308,14 +317,14 @@ export default function PaymentPlansSection() {
                   focusfitness.waveloop.dev
                 </a>
               </p>
-              <p className="text-text-secondary font-body">
+              <p className="text-text-secondary font-body text-sm sm:text-base">
                 Contact us for more information and custom solutions.
               </p>
             </div>
 
             <div className="text-right mt-6">
               <Button
-                className="bg-[#F45C65] text-white hover:bg-[#F45C65]/90 px-6 py-2 text-lg font-medium rounded-lg"
+                className="bg-[#F45C65] text-white hover:bg-[#F45C65]/90 px-4 sm:px-6 py-2 text-sm sm:text-lg font-medium rounded-lg"
                 onClick={closeModal}
               >
                 Close
