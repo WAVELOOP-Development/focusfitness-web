@@ -1,34 +1,35 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const demoScreens = [
+  // {
+  //   title: "Home Dashboard",
+  //   description:
+  //     "Your personalized fitness hub with quick access to workouts and etc.",
+  //   image: "/new1.png",
+  //   color: "from-[#F45C65] to-[#F45C65]/10",
+  // },
   {
-    title: "Home Dashboard",
+    title: "Home Page",
     description:
-      "Your personalized fitness hub with quick access to workouts and etc.",
-    image: "/Home.jpg",
+      "Explore the homepage with quick access to the exercise bank, store, diet plans, and more.",
+    image: "/new3.png",
     color: "from-[#F45C65] to-[#F45C65]/10",
   },
   {
     title: "Workout Library",
     description:
       "Explore a vast collection of workouts tailored to your fitness goals.",
-    image: "/Workout.jpg",
+    image: "/new1.png",
     color: "from-[#F45C65] to-[#F45C65]/10",
   },
-  {
-    title: "Gym Admin Dashboard",
-    description:
-      "Comprehensive analytics and member management for gym owners.",
-    image: "/Admin home.jpg",
-    color: "from-[#F45C65] to-[#F45C65]/10",
-  },
+
   {
     title: "Exercise Guide",
     description: "Comprehensive exercise tutorials and video demonstrations.",
-    image: "/Exc.jpg",
+    image: "/new2.png",
     color: "from-[#F45C65] to-[#F45C65]/10",
   },
 ];
@@ -51,6 +52,14 @@ export default function VisualDemoSection() {
   const getScreenIndex = (offset: number) => {
     return (currentScreen + offset + demoScreens.length) % demoScreens.length;
   };
+
+  // Auto-slide logic
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextScreen();
+    }, 4000); // Change image every 5 seconds
+    return () => clearInterval(interval); // Cleanup on component unmount
+  }, []);
 
   // Touch event handlers
   const handleTouchStart = (e: React.TouchEvent) => {

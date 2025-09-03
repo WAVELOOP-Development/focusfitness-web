@@ -9,14 +9,14 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function AboutOurGymSection() {
   const [currentImage, setCurrentImage] = useState(0);
 
   const images = [
     {
-      src: "/focusfitness.png",
+      src: "/new5.png",
       alt: "Focus Fitness app interface on a smartphone",
     },
     {
@@ -32,6 +32,14 @@ export default function AboutOurGymSection() {
   const prevImage = () => {
     setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
   };
+
+  // Auto-slide logic
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextImage();
+    }, 6000); // Change image every 5 seconds
+    return () => clearInterval(interval); // Cleanup on component unmount
+  }, []);
 
   return (
     <section id="about-us" className="py-20 bg-rich-black text-text-primary">
