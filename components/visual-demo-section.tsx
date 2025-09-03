@@ -113,7 +113,7 @@ export default function VisualDemoSection() {
           </p>
         </div>
         {/* Mobile mockup carousel */}
-        <div className="relative w-fit mx-auto">
+        <div className="relative mx-auto">
           {/* Navigation buttons - Hidden on mobile */}
           <button
             onClick={prevScreen}
@@ -124,19 +124,19 @@ export default function VisualDemoSection() {
 
           <button
             onClick={nextScreen}
-            className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 hover:scale-110 transition-transform duration-200"
+            className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 hover:scale-110 transition-transform duration-1000"
           >
             <ChevronRight className="w-8 h-8 text-text-primary hover:text-[#F45C65] transition-colors" />
           </button>
           {/* Phone mockups carousel */}
           <div
-            className="relative h-[600px] overflow-hidden w-fit mx-auto"
+            className="relative h-[600px] overflow-hidden mx-auto"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
             <div
-              className="flex h-full transition-transform duration-600 w-fit ease-in-out"
+              className="flex h-full transition-transform duration-1000 w-fit ease-in-out"
               style={{
                 // The only change is in the 'transform' property below
                 transform: `translateX(-${(currentScreen * 100) / demoScreens.length}%)`,
