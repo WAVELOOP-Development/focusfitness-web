@@ -46,17 +46,25 @@ export default function AboutOurGymSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         {/* Image Side */}
         <div className="relative animate-on-scroll">
-          <div className="relative">
-            <img
-              src={images[currentImage].src}
-              alt={images[currentImage].alt}
-              className="w-full h-auto rounded-lg shadow-xl transition-opacity duration-300"
-            />
+          <div className="relative overflow-hidden rounded-lg shadow-xl">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentImage * 100}%)` }}
+            >
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-auto flex-shrink-0"
+                />
+              ))}
+            </div>
 
             {/* Navigation Buttons */}
             <button
               onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 z-10"
               aria-label="Previous image"
             >
               <ChevronLeft className="h-6 w-6" />
@@ -64,14 +72,14 @@ export default function AboutOurGymSection() {
 
             <button
               onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 z-10"
               aria-label="Next image"
             >
               <ChevronRight className="h-6 w-6" />
             </button>
 
             {/* Image Indicators */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
               {images.map((_, index) => (
                 <button
                   key={index}

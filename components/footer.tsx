@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-8">
+            <div className="flex items-center justify-center lg:justify-normal space-x-3 mb-8">
               <div className="w-12 h-12 bg-[#F45C65] rounded-xl flex items-center justify-center">
                 <Dumbbell className="h-7 w-7 text-rich-black" />
               </div>

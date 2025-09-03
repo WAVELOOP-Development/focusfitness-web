@@ -36,17 +36,24 @@ const demoScreens = [
 
 export default function VisualDemoSection() {
   const [currentScreen, setCurrentScreen] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
   const nextScreen = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentScreen((prev) => (prev + 1) % demoScreens.length);
+    setTimeout(() => setIsTransitioning(false), 600);
   };
 
   const prevScreen = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentScreen(
-      (prev) => (prev - 1 + demoScreens.length) % demoScreens.length
+      (prev) => (prev - 1 + demoScreens.length) % demoScreens.length,
     );
+    setTimeout(() => setIsTransitioning(false), 600);
   };
 
   const getScreenIndex = (offset: number) => {
@@ -94,9 +101,9 @@ export default function VisualDemoSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-on-scroll">
           <h2 className="text-5xl md:text-6xl font-heading uppercase text-text-primary mb-6">
-            Experience the{" "}
+            Experience the <br />
             <span className="text-[#F45C65]">
-              Ultimate Fitness Management Solution
+              AI Powered Member's Application
             </span>{" "}
             {/* Updated title */}
           </h2>
@@ -106,7 +113,7 @@ export default function VisualDemoSection() {
           </p>
         </div>
         {/* Mobile mockup carousel */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative w-fit mx-auto">
           {/* Navigation buttons - Hidden on mobile */}
           <button
             onClick={prevScreen}
@@ -121,76 +128,70 @@ export default function VisualDemoSection() {
           >
             <ChevronRight className="w-8 h-8 text-text-primary hover:text-[#F45C65] transition-colors" />
           </button>
-          {/* Phone mockups */}
+          {/* Phone mockups carousel */}
           <div
-            className="flex justify-center items-center space-y-8 lg:space-y-0 lg:space-x-12 h-[600px] flex-col lg:flex-row"
+            className="relative h-[600px] overflow-hidden w-fit mx-auto"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            {/* Left phone (previous) */}
-            <div className="hidden lg:block relative transform scale-75 opacity-50 transition-all duration-500">
-              <div className="relative">
-                <div className="w-[280px] h-[560px] bg-black rounded-[3rem] p-4 shadow-2xl border-4 border-gray-800">
-                  <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
-                    <img
-                      src={
-                        demoScreens[getScreenIndex(-1)].image ||
-                        "/placeholder.svg"
-                      }
-                      alt={demoScreens[getScreenIndex(-1)].title}
-                      className="w-full h-full object-cover"
+            <div
+              className="flex h-full transition-transform duration-600 w-fit ease-in-out"
+              style={{
+                // The only change is in the 'transform' property below
+                transform: `translateX(-${(currentScreen * 100) / demoScreens.length}%)`,
+                width: `${demoScreens.length * 100}%`,
+              }}
+            >
+              {demoScreens.map((screen, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 flex items-center justify-center w-fit h-full"
+                  style={{ width: `${100 / demoScreens.length}%` }}
+                >
+                  {/* Phone mockup (no changes needed here) */}
+                  <div className="relative">
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${screen.color} rounded-[3rem] blur-2xl scale-110 transition-opacity duration-600 ${
+                        index === currentScreen ? "opacity-30" : "opacity-10"
+                      }`}
                     />
-                    <div className="absolute inset-0 bg-black/40" />
+                    <div className="relative">
+                      <div className="w-[300px] h-[600px] bg-black rounded-[3rem] p-4 shadow-2xl border-4 border-gray-700">
+                        <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
+                          <img
+                            src={screen.image}
+                            alt={screen.title}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            {/* Center phone (current) */}
-            <div className="relative transform scale-100 transition-all duration-500">
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${demoScreens[currentScreen].color} rounded-[3rem] blur-2xl scale-110 opacity-30`}
-              />
-              <div className="relative">
-                <div className="w-[300px] h-[600px] bg-black rounded-[3rem] p-4 shadow-2xl border-4 border-gray-700">
-                  <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
-                    <img
-                      src={
-                        demoScreens[currentScreen].image || "/placeholder.svg"
-                      }
-                      alt={demoScreens[currentScreen].title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Right phone (next) */}
-            <div className="hidden lg:block relative transform scale-75 opacity-50 transition-all duration-500">
-              <div className="relative">
-                <div className="w-[280px] h-[560px] bg-black rounded-[3rem] p-4 shadow-2xl border-4 border-gray-800">
-                  <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
-                    <img
-                      src={
-                        demoScreens[getScreenIndex(1)].image ||
-                        "/placeholder.svg"
-                      }
-                      alt={demoScreens[getScreenIndex(1)].title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/40" />
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           {/* Screen info */}
           <div className="text-center mt-12">
-            <h3 className="text-3xl font-heading uppercase text-text-primary mb-4">
+            <h3
+              className={`text-3xl font-heading uppercase text-text-primary mb-4 transition-all duration-600 ${
+                isTransitioning
+                  ? "opacity-0 transform translate-y-4"
+                  : "opacity-100 transform translate-y-0"
+              }`}
+            >
               {demoScreens[currentScreen].title}
             </h3>
-            <p className="text-xl text-text-secondary font-body max-w-2xl mx-auto">
+            <p
+              className={`text-xl text-text-secondary font-body max-w-2xl mx-auto transition-all duration-600 ${
+                isTransitioning
+                  ? "opacity-0 transform translate-y-4"
+                  : "opacity-100 transform translate-y-0"
+              }`}
+            >
               {demoScreens[currentScreen].description}
             </p>
           </div>
@@ -199,7 +200,13 @@ export default function VisualDemoSection() {
             {demoScreens.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentScreen(index)}
+                onClick={() => {
+                  if (!isTransitioning && index !== currentScreen) {
+                    setIsTransitioning(true);
+                    setCurrentScreen(index);
+                    setTimeout(() => setIsTransitioning(false), 600);
+                  }
+                }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentScreen
                     ? "bg-[#F45C65] scale-125"

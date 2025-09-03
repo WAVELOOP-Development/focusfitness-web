@@ -28,11 +28,11 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 pb-20 animate-on-scroll text-center justify-center">
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading uppercase text-text-primary leading-tight mb-6">
-          Transform Your Fitness Journey with "Focus Fitness"
+          Transform Your Fitness Center with "Focus Fitness"
         </h1>
         <p className="text-lg sm:text-xl text-text-secondary mb-5 font-body">
-          Sri Lanka's Smartest Fitness App – Personalized Plans, AI Coaching,
-          Fully Customizable, and Seamless Gym Management.
+          Sri Lanka's Smartest Fitness Center Management Platform – AI-Powered,
+          Fully Customizable, and Seamless.
         </p>
 
         {/* Scroll Down Icon */}

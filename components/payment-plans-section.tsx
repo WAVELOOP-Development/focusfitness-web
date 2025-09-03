@@ -13,7 +13,6 @@ type PlanType = {
   price: {
     monthly: string;
     yearly: string;
-    monthlyUSD: string;
     discount: string;
   };
   features: string[];
@@ -230,9 +229,9 @@ export default function PaymentPlansSection() {
         <Dialog
           open={isModalOpen}
           onClose={closeModal}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-rich-black to-black/90"
+          className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md bg-black/30"
         >
-          <div className="bg-[#1A1A1A] rounded-lg max-w-4xl w-full p-6 sm:p-8 overflow-y-auto max-h-[90vh] shadow-2xl border border-[#F45C65] scrollbar-hide">
+          <div className="bg-[#1A1A1A] rounded-lg max-w-4xl w-full p-6 m-8 overflow-y-auto max-h-[90vh] shadow-2xl border border-[#F45C65] scrollbar-hide">
             <div className="flex justify-between items-center mb-6">
               <Dialog.Title className="text-2xl sm:text-4xl font-heading text-[#F45C65] uppercase">
                 FOCUSFITNESS: PRICING PLANS
