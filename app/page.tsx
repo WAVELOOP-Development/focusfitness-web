@@ -24,7 +24,7 @@ export default function Index() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     const elements = document.querySelectorAll(".animate-on-scroll");

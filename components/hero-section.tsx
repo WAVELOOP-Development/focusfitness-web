@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { PulsatingButton } from "./ui/pulsating-button";
 
 export default function HeroSection() {
   const router = useRouter();
@@ -25,8 +26,8 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 animate-on-scroll mt-44">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading uppercase text-text-primary leading-tight mb-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 animate-on-scroll mt-72">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading uppercase text-text-primary leading-tight mb-2">
           Transform Your Fitness Center with <br />
           "Focus Fitness"
         </h1>
@@ -38,7 +39,7 @@ export default function HeroSection() {
         {/* Scroll Down Icon */}
         <button
           onClick={navigateToContact}
-          className="text-2xl font-heading uppercase mt-10 mb-10 p-5 rounded-full border-2 border-[#F45C65] transition-all duration-300 hover:bg-[#F45C65] text-white cursor-pointer animate-pulse"
+          className="text-2xl font-heading uppercase mt-8 mb-8 px-8 py-4 rounded-full border-2 border-[#F45C65] transition-all duration-300 hover:bg-[#F45C65] text-white cursor-pointer animate-pulse"
           style={{
             animation: "slowBounce 2s ease-in-out infinite",
           }}
