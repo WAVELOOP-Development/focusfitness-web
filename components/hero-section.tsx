@@ -1,6 +1,5 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function HeroSection() {
@@ -13,7 +12,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative h-screen flex items-end justify-center text-center overflow-hidden bg-rich-black"
+      className="relative h-full flex items-center justify-center text-center overflow-hidden bg-rich-black"
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
@@ -26,9 +25,10 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 pb-20 animate-on-scroll text-center justify-center">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading uppercase text-text-primary leading-tight mb-6">
-          Transform Your Fitness Center with "Focus Fitness"
+      <div className="relative z-10 max-w-6xl mx-auto px-6 animate-on-scroll mt-44">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading uppercase text-text-primary leading-tight mb-6">
+          Transform Your Fitness Center with <br />
+          "Focus Fitness"
         </h1>
         <p className="text-lg sm:text-xl text-text-secondary mb-5 font-body">
           Sri Lanka's Smartest Fitness Center Management Platform – AI-Powered,
@@ -38,7 +38,7 @@ export default function HeroSection() {
         {/* Scroll Down Icon */}
         <button
           onClick={navigateToContact}
-          className="text-2xl font-heading uppercase mt-10 p-5 rounded-full border-2 border-[#F45C65] transition-all duration-300 hover:bg-[#F45C65] text-white cursor-pointer animate-pulse"
+          className="text-2xl font-heading uppercase mt-10 mb-10 p-5 rounded-full border-2 border-[#F45C65] transition-all duration-300 hover:bg-[#F45C65] text-white cursor-pointer animate-pulse"
           style={{
             animation: "slowBounce 2s ease-in-out infinite",
           }}

@@ -11,6 +11,7 @@ import Footer from "@/components/footer";
 import VisualDemoSection from "@/components/visual-demo-section";
 import QuoteSection from "@/components/quote-section";
 import PaymentPlansSection from "@/components/payment-plans-section";
+import VideoSection from "@/components/video";
 
 export default function Index() {
   useEffect(() => {
@@ -58,6 +59,7 @@ export default function Index() {
       <Navbar />
       <main className="space-y-10">
         <HeroSection />
+        <VideoSection />
         <AboutOurGymSection />
         <CoreFeaturesSection />
         <PaymentPlansSection />
